@@ -1,0 +1,12 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @control.name %>
+</p>
+ 
+<p>
+  <strong>Descripción:</strong>
+  <%= @control.description %>
+</p>
+
+<%= link_to 'Editar', edit_control_path(@control) %>
+<%= link_to 'Volver', controls_path %>

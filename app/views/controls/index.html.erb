@@ -1,0 +1,23 @@
+<h1>Lista controles</h1>
+ 
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th></th>
+  </tr>
+ 
+  <% @controls.each do |control| %>
+    <tr>
+      <td><%= control.name %></td>
+      <td><%= control.description %></td>
+      <td><%= link_to 'Ver', control_path(control) %></td>
+      <td><%= link_to 'Editar', edit_control_path(control) %></td>
+      <td><%= link_to 'Eliminar', control_path(control),
+                  method: :delete,
+                  data: { confirm: 'Deseas eliminar el registro?' } %></td>      
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Nuevo Control', new_control_path %>
